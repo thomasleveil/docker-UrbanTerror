@@ -1,15 +1,42 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get -y install unzip
+FROM tomdesinto/urbanterror-data:4.2.018
+# See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
+# a list of version numbers.
 
-## if link is broken, check http://www.urbanterror.info/downloads/
-ADD http://www.formulaworld.net/uploads/urt/UrbanTerror42_full018.zip /
+# Set correct environment variables.
+ENV HOME /root
 
-RUN unzip UrbanTerror42_full018.zip && rm UrbanTerror42_full018.zip
+# Regenerate SSH host keys. baseimage-docker does not contain any, so you
+# have to do that yourself. You may also comment out this instruction; the
+# init system will auto-generate one during boot.
+RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
-ADD run.sh /
-RUN chmod +x /run.sh
+
+## Install an SSH of your choice.
+# ADD your_key /tmp/your_key
+# RUN cat /tmp/your_key >> /root/.ssh/authorized_keys && rm -f /tmp/your_key
+## -OR-
+## Uncomment this to enable the insecure key.
+RUN /usr/sbin/enable_insecure_key
+
+## Install startup scripts
+ADD 01-motd.sh /etc/my_init.d/01-motd.sh
+ADD 02-check_requirements.sh /etc/my_init.d/02-check_requirements.sh
+ADD 03-install_maps.sh /etc/my_init.d/03-install_maps.sh
+RUN chmod +x /etc/my_init.d/*.sh
+
+## Install UrT service
+RUN mkdir /etc/service/urt
+ADD urt.sh /etc/service/urt/run
+RUN chmod u+x /etc/service/urt/run
+
+
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#------------------------------------------------------------------------------
+
 
 EXPOSE 27960
-WORKDIR /UrbanTerror42
-CMD ["/run.sh"]
+WORKDIR /home/urt/UrbanTerror42
+
+# Use baseimage-docker's init system.
+CMD ["/sbin/my_init"]
