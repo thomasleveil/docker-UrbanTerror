@@ -28,7 +28,7 @@ docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/
 Security note
 -------------
 
-You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key](http://bit.ly/1hc36Ii) [PyTTY format](http://bit.ly/NfDhxG)   
+You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key](http://bit.ly/1hc36Ii) [PuTTY format](http://bit.ly/NfDhxG)   
    
 **DO NOT** expose port 22 on the Internet or anyone with that key will be able to connect as root to your container!                             
 
