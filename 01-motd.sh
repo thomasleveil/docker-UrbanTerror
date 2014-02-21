@@ -11,14 +11,19 @@ cat <<"EOF"
  +---------------------------------------------------------------------------+
  |                                                                           |
  |  Start the docker container with a volume mounted to /q3ut4.              |
- |    $ docker run -d -p 27960:27960 -v /change/me/q3ut4:/q3ut4 figurt/urt   |
+ |    $ docker run -d -p 27960:27960/udp \                                   |
+ |      -v /change/me/q3ut4:/q3ut4 \                                         |
+ |      tomdesinto/urbanterror                                               |
  |  This volume MUST contain your server.cfg file.                           |
  |                                                                           |
  |                                                                           |
  |  If you want additional maps, also mount a volume containing the your pk3 |
  |  map files to /maps.                                                      |
- |    $ docker run -d -p 27960:27960 -v /change/me/q3ut4:/q3ut4 \            |
- |      -v /change/me/my_maps:/maps figurt/urt                               |
+ |    $ docker run -d -p 27960:27960/udp \                                   |
+ |      -v /change/me/q3ut4:/q3ut4 \                                         |
+ |      -v /change/me/my_maps:/maps                                          |
+ |      tomdesinto/urbanterror                                               |
+ |                                                                           |
  |                                                                           |
  |  You can connect with SSH or SFTP to the docker container with user root  |
  |  on port 22 and using the following INSECURE private key                  |

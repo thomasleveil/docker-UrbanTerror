@@ -12,7 +12,7 @@ Usage
 4. run the docker container:
 
 ```bash
-docker run -d -p 27960:27960 -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4.2.018
+docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4.2.018
 ```
 
 ### If you want to install additional maps
@@ -22,7 +22,7 @@ docker run -d -p 27960:27960 -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4
 4. run the docker container:
 
 ```bash
-docker run -d -p 27960:27960 -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.018
+docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.018
 ```
 
 Security note
