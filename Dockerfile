@@ -35,7 +35,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #------------------------------------------------------------------------------
 
 
-EXPOSE 27960
 WORKDIR /home/urt/UrbanTerror42
 
 # Use baseimage-docker's init system.
