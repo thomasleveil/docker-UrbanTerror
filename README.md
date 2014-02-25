@@ -25,10 +25,15 @@ docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterr
 docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.018
 ```
 
-Security note
--------------
+SSH Connection
+--------------
 
-You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key](http://bit.ly/1hc36Ii) [PuTTY format](http://bit.ly/NfDhxG)   
+You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key](http://bit.ly/1hc36Ii) [PuTTY format](http://bit.ly/NfDhxG) and starting your container as follow:
+
+```bash
+docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.018 /sbin/my_init --enable-insecure-key
+```
+   
    
 **DO NOT** expose port 22 on the Internet or anyone with that key will be able to connect as root to your container!                             
 
