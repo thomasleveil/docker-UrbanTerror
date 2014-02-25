@@ -16,7 +16,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 # RUN cat /tmp/your_key >> /root/.ssh/authorized_keys && rm -f /tmp/your_key
 ## -OR-
 ## Uncomment this to enable the insecure key.
-RUN /usr/sbin/enable_insecure_key
+# RUN /usr/sbin/enable_insecure_key
 
 ## Install startup scripts
 ADD 01-motd.sh /etc/my_init.d/01-motd.sh
