@@ -17,8 +17,8 @@ cat <<"EOF"
  |  This volume MUST contain your server.cfg file.                           |
  |                                                                           |
  |                                                                           |
- |  If you want additional maps, also mount a volume containing the your pk3 |
- |  map files to /maps.                                                      |
+ |  If you want additional maps, also mount a volume containing your pk3 map |
+ |  files to /maps.                                                          |
  |    $ docker run -d -p 27960:27960/udp \                                   |
  |      -v /change/me/q3ut4:/q3ut4 \                                         |
  |      -v /change/me/my_maps:/maps                                          |
