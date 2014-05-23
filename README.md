@@ -11,7 +11,7 @@ Usage
 - copy your UrT `server.cfg` config file in `/my_server/q3ut4`
 - run the docker container:
 
-`docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4.2.018`
+        docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4.2.018`
 
 
 ### If you want to install additional maps
@@ -20,7 +20,7 @@ Usage
 - copy the pk3 map files in it
 - run the docker container:
 
-`docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.018`
+        docker run -d -p 27960:27960/udp -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.018
 
 
 SSH Connection
