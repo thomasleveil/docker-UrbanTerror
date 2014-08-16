@@ -30,11 +30,6 @@ ADD urt.sh /etc/service/urt/run
 RUN chmod u+x /etc/service/urt/run
 
 
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-#------------------------------------------------------------------------------
-
-
 WORKDIR /home/urt/UrbanTerror42
 
 # Use baseimage-docker's init system.
