@@ -1,4 +1,4 @@
-FROM tomdesinto/urbanterror-data:4.2.018
+FROM tomdesinto/urbanterror-data:4.2.019
 # See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
 # a list of version numbers.
 
