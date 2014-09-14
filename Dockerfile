@@ -31,6 +31,7 @@ RUN chmod u+x /etc/service/urt/run
 
 
 WORKDIR /home/urt/UrbanTerror42
+ENV URT_PORT 27960
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
