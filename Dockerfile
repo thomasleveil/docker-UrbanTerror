@@ -1,5 +1,5 @@
-FROM tomdesinto/urbanterror-data:4.2.019
-# See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
+FROM tomdesinto/urbanterror-data:4.2.020
+# See https://registry.hub.docker.com/u/tomdesinto/urbanterror-data/tags/manage/
 # a list of version numbers.
 
 # Set correct environment variables.
