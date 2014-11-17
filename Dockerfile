@@ -1,4 +1,4 @@
-FROM tomdesinto/urbanterror-data:4.2.020
+FROM tomdesinto/urbanterror-data:4.2.021
 # See https://registry.hub.docker.com/u/tomdesinto/urbanterror-data/tags/manage/
 # a list of version numbers.
 
