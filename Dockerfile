@@ -1,9 +1,12 @@
-FROM tomdesinto/urbanterror-data:4.2.022
+FROM tomdesinto/urbanterror-data:4.2.023
 # See https://registry.hub.docker.com/u/tomdesinto/urbanterror-data/tags/manage/
 # a list of version numbers.
 
 # Set correct environment variables.
 ENV HOME /root
+
+# Activate the SSH service
+RUN rm -f /etc/service/sshd/down
 
 # Regenerate SSH host keys. baseimage-docker does not contain any, so you
 # have to do that yourself. You may also comment out this instruction; the
