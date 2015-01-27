@@ -2,6 +2,9 @@
 
 URT_PORT=${URT_PORT:-27960}
 
+## change ownership for /q3ut4
+chown urt: /q3ut4
+
 ## run the UrT server
 echo "===== running UrT server on port ${URT_PORT} ======"
 exec /sbin/setuser urt /home/urt/UrbanTerror42/Quake3-UrT-Ded.x86_64 \
