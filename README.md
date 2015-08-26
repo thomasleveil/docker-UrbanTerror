@@ -1,6 +1,8 @@
 UrbanTerror server
 ==================
 
+[![](https://badge.imagelayers.io/tomdesinto/urbanterror:latest.svg)](https://imagelayers.io/?images=tomdesinto/urbanterror:latest 'Get your own badge on imagelayers.io')
+
 A docker image running the [UrbanTerror](http://urbanterror.info) game server.
 
 
