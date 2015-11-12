@@ -18,12 +18,35 @@ Usage
 
 ### If you want to install additional maps
 
+#### There are 2 options:
+
+**Option 1:**
+
+When the docker container is booting, it will COPY the maps into the appropriate directory so the server can read it.  This is the slower option, but will work always.
+
 - create a folder `/my_server/maps` on your docker host machine
 - copy the pk3 map files in it
 - run the docker container:
 
         docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.2.023
 
+**Option 2:**
+
+This works on 4.2.023, I don't know about older versions.  This mounts your maps folder directly into a subfolder of the q3ut4 folder.  The URT documentation says this shouldn't work, but one of the recent UT versions enabled it.  
+
+ create a folder `/my_server/maps` on your docker host machine
+- copy the pk3 map files in it
+- run the docker container:
+
+```
+docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/home/urt/UrbanTerror42/q3ut4/download tomdesinto/urbanterror:4.2.023
+```
+
+**Whats the diference between Option 1 and 2?**  
+
+Options 1 uses `-v /my_server/maps:/maps` and a script copies from `/maps` directly into the `/home/urt/UrbanTerror42/q3ut4` folder.  Option 2 uses `-v /my_server/maps:/home/urt/UrbanTerror42/q3ut4/download` which mounts the maps directly into the `q3ut4/download` folder... no copying takes place.
+
+Option 1 is slower, but should work in future versions of UT.  Option 2 is faster and is not verified to work in older UT versions (older than 4.2.023).
 
 ### If you want to run the server on a different port
 
