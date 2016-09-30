@@ -1,4 +1,4 @@
-FROM tomdesinto/urbanterror-data:4.2.023
+FROM tomdesinto/urbanterror-data:4.3
 # See https://registry.hub.docker.com/u/tomdesinto/urbanterror-data/tags/manage/
 # a list of version numbers.
 
@@ -33,7 +33,7 @@ ADD urt.sh /etc/service/urt/run
 RUN chmod u+x /etc/service/urt/run
 
 
-WORKDIR /home/urt/UrbanTerror42
+WORKDIR /home/urt/UrbanTerror43
 ENV URT_PORT 27960
 
 # Use baseimage-docker's init system.

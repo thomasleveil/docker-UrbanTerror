@@ -1,8 +1,8 @@
 .PHONY: build shell run
 
 PORT = 27960
-DOCKER_IMAGE = tomdesinto/urbanterror:4.2.023
-DOCKER_CONTAINER = urt42
+DOCKER_IMAGE = tomdesinto/urbanterror:4.3
+DOCKER_CONTAINER = urt43
 
 build:
 	docker build --rm --tag "$(DOCKER_IMAGE)" .
