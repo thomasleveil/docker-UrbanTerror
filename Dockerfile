@@ -33,6 +33,16 @@ ADD urt.sh /etc/service/urt/run
 RUN chmod u+x /etc/service/urt/run
 
 
+## Install packages to allow to run the Urban Terror 32bit binary
+RUN apt update \
+  && apt install -y \
+    lib32gcc1 \
+    lib32ncurses5 \
+    lib32stdc++6 \
+    lib32z1 \
+    libc6 \
+    libc6-i386
+
 WORKDIR /home/urt/UrbanTerror43
 ENV URT_PORT 27960
 
