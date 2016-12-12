@@ -13,7 +13,7 @@ Usage
 - copy your UrT `server.cfg` config file in `/my_server/q3ut4`
 - run the docker container:
 
-        docker run -d --net host -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4.3
+        docker run -d --net host -v /my_server/q3ut4:/q3ut4 tomdesinto/urbanterror:4.3.1
 
 
 
@@ -31,7 +31,7 @@ When the docker container is booting, it will COPY the maps into the appropriate
 - copy the pk3 map files in it
 - run the docker container:
 
-        docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.3
+        docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.3.1
 
 **Option 2:**
 
@@ -42,7 +42,7 @@ This works on 4.2.023, I don't know about older versions.  This mounts your maps
 - run the docker container:
 
 ```
-docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/home/urt/UrbanTerror43/q3ut4/download tomdesinto/urbanterror:4.3
+docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/home/urt/UrbanTerror43/q3ut4/download tomdesinto/urbanterror:4.3.1
 ```
 
 **Whats the diference between Option 1 and 2?**  
@@ -57,7 +57,7 @@ The `URT_PORT` environment variable can be set to run the Urban Terror server on
 
 To run the server on port 27000:
 
-    docker run -d --net host -v /my_server/q3ut4:/q3ut4 -e URT_PORT=27000 tomdesinto/urbanterror:4.3
+    docker run -d --net host -v /my_server/q3ut4:/q3ut4 -e URT_PORT=27000 tomdesinto/urbanterror:4.3.1
 
 
 
@@ -66,7 +66,7 @@ SSH Connection
 
 You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key](http://bit.ly/1hc36Ii) [PuTTY format](http://bit.ly/NfDhxG) and starting your container as follow:
 
-    docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.3 /sbin/my_init --enable-insecure-key
+    docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.3.1 /sbin/my_init --enable-insecure-key
 
    
    
@@ -80,6 +80,6 @@ This image is based on tomdesinto/urbanterror-data which contains just the Urban
 
     git clone https://github.com/thomasleveil/docker-UrbanTerror.git
     cd docker-UrbanTerror
-    sudo docker build -t tomdesinto/urbanterror:4.3 .
+    sudo docker build -t tomdesinto/urbanterror:4.3.1 .
 
 
