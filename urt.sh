@@ -7,7 +7,7 @@ chown urt: /q3ut4
 
 ## run the UrT server
 echo "===== running UrT server on port ${URT_PORT} ======"
-exec /sbin/setuser urt /home/urt/UrbanTerror43/Quake3-UrT-Ded.i386 \
+exec /sbin/setuser urt /home/urt/UrbanTerror43/Quake3-UrT-Ded.x86_64 \
 	+set fs_game q3ut4 \
 	+set fs_homepath / \
 	+set dedicated 2 \
