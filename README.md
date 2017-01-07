@@ -64,7 +64,7 @@ To run the server on port 27000:
 SSH Connection
 --------------
 
-You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key](http://bit.ly/1hc36Ii) [PuTTY format](http://bit.ly/NfDhxG) and starting your container as follow:
+You can connect with SSH or SFTP to the docker container with user `root` on port 22 and using [this INSECURE private key][ssh-key] [PuTTY format][putty-key] and starting your container as follow:
 
     docker run -d --net host -v /my_server/q3ut4:/q3ut4 -v /my_server/maps:/maps tomdesinto/urbanterror:4.3.1 /sbin/my_init --enable-insecure-key
 
@@ -82,4 +82,5 @@ This image is based on tomdesinto/urbanterror-data which contains just the Urban
     cd docker-UrbanTerror
     sudo docker build -t tomdesinto/urbanterror:4.3.1 .
 
-
+[ssh-key]: https://raw.githubusercontent.com/phusion/baseimage-docker/master/image/services/sshd/keys/insecure_key
+[putty-key]: https://raw.githubusercontent.com/phusion/baseimage-docker/master/image/services/sshd/keys/insecure_key.ppk
