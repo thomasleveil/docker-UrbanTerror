@@ -1,5 +1,5 @@
 FROM tomdesinto/urbanterror-data:4.3.2
-# See https://registry.hub.docker.com/u/tomdesinto/urbanterror-data/tags/manage/
+# See https://hub.docker.com/r/tomdesinto/urbanterror-data/tags/
 # a list of version numbers.
 
 # Set correct environment variables.
