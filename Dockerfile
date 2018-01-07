@@ -36,6 +36,7 @@ RUN chmod u+x /etc/service/urt/run
 
 ## Urt 4.3.2-hotfix
 ADD https://github.com/Barbatos/ioq3-for-UrbanTerror-4/releases/download/release-4.3.2-hotfix/Quake3-UrT-Ded.x86_64 /home/urt/UrbanTerror43/Quake3-UrT-Ded.x86_64
+RUN chmod +x /home/urt/UrbanTerror43/Quake3-UrT-Ded.x86_64
 
 ## Verify files
 COPY checksums /home/urt/UrbanTerror43/checksums
