@@ -1,4 +1,4 @@
-FROM tomdesinto/urbanterror-data:4.3.2
+FROM tomdesinto/urbanterror-data:4.3.3
 # See https://hub.docker.com/r/tomdesinto/urbanterror-data/tags/
 # a list of version numbers.
 
@@ -33,10 +33,6 @@ RUN chmod +x /etc/my_init.d/*.sh
 RUN mkdir /etc/service/urt
 COPY urt.sh /etc/service/urt/run
 RUN chmod u+x /etc/service/urt/run
-
-## Urt 4.3.2-hotfix
-ADD https://github.com/Barbatos/ioq3-for-UrbanTerror-4/releases/download/release-4.3.2-hotfix/Quake3-UrT-Ded.x86_64 /home/urt/UrbanTerror43/Quake3-UrT-Ded.x86_64
-RUN chmod +x /home/urt/UrbanTerror43/Quake3-UrT-Ded.x86_64
 
 ## Verify files
 COPY checksums /home/urt/UrbanTerror43/checksums
