@@ -2,6 +2,19 @@ FROM tomdesinto/urbanterror-data:4.3.4
 # See https://hub.docker.com/r/tomdesinto/urbanterror-data/tags/
 # a list of version numbers.
 
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.name="Urban Terror Server" \
+      org.label-schema.description="Docker image to run a Urban Terror Server" \
+      org.label-schema.usage="https://github.com/thomasleveil/docker-UrbanTerror/blob/master/README.md" \
+      org.label-schema.url="https://www.urbanterror.info/" \
+      org.label-schema.vcs-url="https://github.com/thomasleveil/docker-UrbanTerror" \
+      org.label-schema.vcs-url="https://github.com/thomasleveil/docker-UrbanTerror.git" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.schema-version="1.0.0-rc1"
+
 WORKDIR /home/urt/UrbanTerror43
 
 # Set correct environment variables.
