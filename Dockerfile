@@ -6,14 +6,13 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.name="Urban Terror Server" \
-      org.label-schema.description="Docker image to run a Urban Terror Server" \
-      org.label-schema.usage="https://github.com/thomasleveil/docker-UrbanTerror/blob/master/README.md" \
-      org.label-schema.url="https://www.urbanterror.info/" \
-      org.label-schema.vcs-url="https://github.com/thomasleveil/docker-UrbanTerror" \
-      org.label-schema.vcs-url="https://github.com/thomasleveil/docker-UrbanTerror.git" \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.schema-version="1.0.0-rc1"
+    org.label-schema.description="Docker image to run a Urban Terror Server" \
+    org.label-schema.usage="/README.md" \
+    org.label-schema.url="https://www.urbanterror.info/" \
+    org.label-schema.vcs-url="https://github.com/thomasleveil/docker-UrbanTerror" \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.schema-version="1.0.0-rc1"
 
 WORKDIR /home/urt/UrbanTerror43
 
@@ -52,6 +51,7 @@ COPY checksums /home/urt/UrbanTerror43/checksums
 RUN md5sum -c /home/urt/UrbanTerror43/checksums
 
 ENV URT_PORT 27960
+COPY README.md /README.md
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
